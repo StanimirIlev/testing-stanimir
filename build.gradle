@@ -2,10 +2,20 @@ group 'clouway'
 
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 mainClassName = 'com.clouway.MyClass'
 
 sourceCompatibility = 1.8
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
 
 repositories {
     mavenCentral()
@@ -23,7 +33,7 @@ jar {
         )
     }
 }
-task copyLibs(type: Copy, dependsOn: build) {
+task copyLibs(type: Copy) {//   , dependOn: build
     from configurations.compile
     into 'build/libs'
     println 'Done!'

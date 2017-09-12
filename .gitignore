@@ -1,1 +1,4 @@
-JavaTasks/
+.gitignore
+.idea/
+*.iml
+target/

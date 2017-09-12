@@ -1,17 +1,15 @@
 package com.stanimiriliev.mocks.filter;
 
-//import org.jmock.Mockery;
+
 
 /**
  * @author Stanimir Iliev
  * @since 17.08.2017
  */
 
-public class EndpointFilter {
 
-    public interface Endpoint {
-        boolean matches(String url);
-    }
+
+public class EndpointFilter {
 
     private final Endpoint[] endpoints;
 
